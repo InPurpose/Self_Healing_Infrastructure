@@ -8,5 +8,12 @@ dependencies = [
     "alembic>=1.18.4",
     "dotenv>=0.9.9",
     "fastapi>=0.135.3",
+    "kaggle>=2.0.1",
     "sqlmodel>=0.0.38",
+    "uvicorn>=0.44.0",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+namespaces = false
