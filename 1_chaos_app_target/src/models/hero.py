@@ -1,0 +1,20 @@
+from sqlmodel import Field, SQLModel, create_engine
+
+class Hero(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    name: str
+    secret_name: str
+    age: int | None = None
+
+from dotenv import load_dotenv
+import os
+
+def main():
+    load_dotenv()
+    database_url = os.getenv("DATABASE_URL")
+    engine = create_engine(database_url)
+    SQLModel.metadata.create_all(engine)
+
+
+if __name__ == "__main__":
+    main()
