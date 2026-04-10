@@ -1,9 +1,11 @@
 # ---- environment ---- 
 .env
 .venv
+*/.vscode/
 
 **/__pycache__/
 
 data/*
 
 1_chaos_app_target.egg-info/
+
