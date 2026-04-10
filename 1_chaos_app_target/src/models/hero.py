@@ -1,21 +1,37 @@
 from sqlmodel import Field, SQLModel, create_engine
 
+# class HeroBase(SQLModel):
+#     name: str
+#     age: int | None = None
+
+# class Hero(HeroBase, table=True):
+#     id: int | None = Field(default=None, primary_key=True)
+#     # name: str
+#     secret_name: str
+#     # age: int | None = None
+
+# class HeroPublic(HeroBase,):
+#     test:str
+
+# # Code above omitted 👆
+
 class Hero(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
+    name: str = Field(index=True)
+    secret_name: str
+    age: int | None = Field(default=None, index=True)
+
+
+class HeroCreate(SQLModel):
     name: str
     secret_name: str
     age: int | None = None
-    test:str
-
-# from dotenv import load_dotenv
-# import os
-
-# def main():
-#     load_dotenv()
-#     database_url = os.getenv("DATABASE_URL")
-#     engine = create_engine(database_url)
-#     SQLModel.metadata.create_all(engine)
 
 
-# if __name__ == "__main__":
-#     main()
+class HeroPublic(SQLModel):
+    id: int
+    name: str
+    secret_name: str
+    age: int | None = None
+
+# Code below omitted 👇
