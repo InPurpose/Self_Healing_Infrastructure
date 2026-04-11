@@ -1,19 +1,4 @@
-from sqlmodel import Field, SQLModel, create_engine
-
-# class HeroBase(SQLModel):
-#     name: str
-#     age: int | None = None
-
-# class Hero(HeroBase, table=True):
-#     id: int | None = Field(default=None, primary_key=True)
-#     # name: str
-#     secret_name: str
-#     # age: int | None = None
-
-# class HeroPublic(HeroBase,):
-#     test:str
-
-# # Code above omitted 👆
+from sqlmodel import Field, SQLModel
 
 class Hero(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
@@ -33,5 +18,3 @@ class HeroPublic(SQLModel):
     name: str
     secret_name: str
     age: int | None = None
-
-# Code below omitted 👇
