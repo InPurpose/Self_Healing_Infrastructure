@@ -61,3 +61,10 @@ Think of the Chaos App as your Target Environment. If your RAG Agent is the immu
 It should look like a completely standard, boring application—for example, a simple E-commerce Inventory API or a Financial Transaction Service. It needs normal endpoints (GET /inventory, POST /checkout).
 
 However, you will build a "secret" set of endpoints—the Chaos Controller—that intentionally breaks the app.
+
+
+```
+CREATE DATABASE ChaosApp;
+CREATE USER chaos_app_user WITH PASSWORD '123456';
+GRANT ALL ON SCHEMA public TO chaos_app_user;
+```
