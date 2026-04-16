@@ -10,7 +10,7 @@ class GeoLocation(SQLModel, table=True):
 
     zipcode: str = Field(primary_key=True)
     latitude: float | None 
-    longtitude: float  | None 
+    longitude: float  | None 
     city: str | None
     state: str | None 
 
@@ -29,6 +29,6 @@ class GeoLocationPublic(SQLModel):
 
     zipcode: str | None
     latitude: float | None 
-    longtitude: float  | None 
+    longitude: float  | None 
     city: str | None
     state: str | None 

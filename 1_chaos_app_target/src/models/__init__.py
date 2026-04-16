@@ -1,4 +1,3 @@
-
 from src.models.category import *
 from src.models.geolocation import *
 
