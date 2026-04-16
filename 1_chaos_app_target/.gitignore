@@ -9,3 +9,4 @@ data/*
 
 1_chaos_app_target.egg-info/
 
+# scripts/*
