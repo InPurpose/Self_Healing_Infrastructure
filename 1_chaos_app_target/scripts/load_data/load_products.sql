@@ -17,6 +17,13 @@ TRUNCATE staging_products;
 -- 3. 导入 CSV
 \copy staging_products FROM 'data/olist/olist_products_dataset.csv' CSV HEADER
 
+-- 3.5 
+INSERT INTO category (name)
+SELECT DISTINCT product_category_name
+FROM staging_products
+WHERE product_category_name IS NOT NULL
+ON CONFLICT (name) DO NOTHING;
+
 -- 4. 插入 product（通过 name 映射到 category_id）
 INSERT INTO product (
     product_id,

@@ -18,3 +18,6 @@ SELECT DISTINCT
 FROM staging_category
 WHERE product_category_name IS NOT NULL
 ON CONFLICT (name) DO NOTHING;
+
+
+DROP TABLE IF EXISTS staging_category;
